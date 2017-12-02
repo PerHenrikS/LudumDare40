@@ -84,8 +84,6 @@ public class Tutorial : MonoBehaviour {
 			arrow.gameObject.SetActive (false); 
 			break; 
 		case 5: 
-			tut4.SetActive (false); 
-			hint.SetActive (false); 
 			break; 
 		}
 	}
