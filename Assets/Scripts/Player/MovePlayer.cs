@@ -15,8 +15,7 @@ public class MovePlayer : MonoBehaviour {
 	//Launch variables
 	private float clickedTime = 0f; 
 	private float launchForce = 1.0f; 
-	private bool launchReady = true; 
-	private bool preparing = false; 
+	private bool launchReady = true;  
 	public float launchMultiplier = 10f; 	//Multiplier for launch force to get a nicer feeling
 
 	public float prepareTime = 1f; 
@@ -35,27 +34,12 @@ public class MovePlayer : MonoBehaviour {
 		}
 
 		if(selected && !gameController.launched){
-			/*
-			 * Uncomment if we take back the angle thingy
-			if (!charging) {
-				Vector3 targetScreenPos = Camera.main.WorldToScreenPoint (target.position);
-				targetScreenPos.z = 0;
-				Vector3 targetToMouseDir = Input.mousePosition - targetScreenPos;
-				Vector3 targetToMe = transform.position - target.position;
-				targetToMe.z = 0;
-				Vector3 newTargetToMe = Vector3.RotateTowards (targetToMe, targetToMouseDir, 2f, 0f);
-				transform.position = target.position + radius * newTargetToMe.normalized;
-			}
-			*/
 			if(launchReady){
 				if(Input.GetMouseButtonDown(0)){ 
 					clickedTime = Time.time;
 					charging = true; 
 				}
 				if(Input.GetMouseButtonUp(0) && charging){
-					//launchForce = launchForce + (Time.time - clickedTime) * launchMultiplier;
-
-					Debug.Log ("Launched with force: " + launchForce);
 					gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * launchMultiplier);
 					homePlanet.deselect (); 
 					charging = false;
@@ -68,6 +52,13 @@ public class MovePlayer : MonoBehaviour {
 
 	public void prepareToLaunch(){
 		StartCoroutine (prepareLaunch ());
+	}
+
+	//Check if collided planet is target
+	void OnCollisionEnter2D(Collision2D col){
+		if(col.gameObject.tag == "TargetPlanet"){
+			Debug.Log ("WIN");
+		}
 	}
 
 	IEnumerator prepareLaunch(){

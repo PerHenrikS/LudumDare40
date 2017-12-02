@@ -25,7 +25,6 @@ public class HomePlanet : MonoBehaviour {
 	void Update(){
 		if(selected){
 			if(!selCol){
-				Debug.Log ("Changed color");
 				gameObject.GetComponent<SpriteRenderer> ().color = spriteCol + new Color(.2f, .2f, .2f);
 				selCol = true; 
 			}

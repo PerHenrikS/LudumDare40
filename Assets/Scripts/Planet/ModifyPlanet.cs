@@ -17,8 +17,8 @@ public class ModifyPlanet : MonoBehaviour {
 	public GameObject gravityVisual; 
 	public Sprite gravitySprite; 
 
-	public float minRadius = 5f; 
-	public float maxRadius = 20f;
+	public float minRadius = .2f; 
+	public float maxRadius = .1f;
 	private float gravRadius; 
 
 	void Start(){
@@ -31,6 +31,7 @@ public class ModifyPlanet : MonoBehaviour {
 	}
 
 	public void planetSelected(){
+		Debug.Log ("This thing was called");
 		gameController.setSelectedId (gameObject.name);
 		this.selected = true; 
 	}
@@ -56,13 +57,18 @@ public class ModifyPlanet : MonoBehaviour {
 				highlight.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0.1f);
 			}
 			if(Input.GetAxis("Mouse ScrollWheel") > 0f){
-				Debug.Log ("Radius: " + circleSize.radius);
-				circleSize.radius += .1f; 
-				highlight.transform.localScale += new Vector3 (.2f, .2f, 0f);
+				if(circleSize.radius < maxRadius){
+					circleSize.radius += .1f; 
+					
+					highlight.transform.localScale += new Vector3 (.2f, .2f, 0f);
+				}
 			}
 			else if(Input.GetAxis("Mouse ScrollWheel") < 0f){
-				circleSize.radius -= .1f; 
-				highlight.transform.localScale += new Vector3 (-.2f, -.2f, 0f);
+				if(circleSize.radius > minRadius){
+					highlight.transform.localScale += new Vector3 (-.2f, -.2f, 0f);
+					
+					circleSize.radius -= .1f; 
+				}
 			}
 		}
 	}
