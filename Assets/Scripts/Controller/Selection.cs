@@ -38,6 +38,10 @@ public class Selection : MonoBehaviour {
 					Debug.Log ("Hit a planet with tag: " + hit.transform.tag + " sending planetSelected");
 					hit.collider.SendMessage ("planetSelected");
 				}
+			}else{
+				if(selectedId != "HomePlanet"){
+					this.setSelectedId ("");
+				}				
 			}
 		}
 	}
