@@ -14,9 +14,10 @@ public class MovePlayer : MonoBehaviour {
 
 	//Launch variables
 	private float clickedTime = 0f; 
-	private float launchForce = 10.0f; 
+	private float launchForce = 1.0f; 
 	private bool launchReady = true; 
 	private bool preparing = false; 
+	public float launchMultiplier = 10f; 	//Multiplier for launch force to get a nicer feeling
 
 	public float prepareTime = 1f; 
 
@@ -49,11 +50,11 @@ public class MovePlayer : MonoBehaviour {
 					charging = true; 
 				}
 				if(Input.GetMouseButtonUp(0) && charging){
-					launchForce = launchForce + Time.time - clickedTime; 
+					//launchForce = launchForce + (Time.time - clickedTime) * launchMultiplier;
 
-					gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * 100f);
-					homePlanet.deselect ();
-					launchForce = 1f; 
+					Debug.Log ("Launched with force: " + launchForce);
+					gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * launchMultiplier);
+					homePlanet.deselect (); 
 					charging = false;
 					gameController.launchCubesat ();
 					Debug.Log ("Launched!");
@@ -67,9 +68,8 @@ public class MovePlayer : MonoBehaviour {
 	}
 
 	IEnumerator prepareLaunch(){
-		Debug.Log ("Preparing for launch");
+		charging = false; 
 		yield return new WaitForSeconds (prepareTime);
 		launchReady = true; 
-		Debug.Log ("Launch Ready"); 
 	}
 }

@@ -17,14 +17,13 @@ public class HomePlanet : MonoBehaviour {
 		playerScript = GameObject.Find ("Cubesat").GetComponent<MovePlayer> ();
 	}
 
-	void OnMouseDown(){
+	public void planetSelected(){
 		gameController.setSelectedId (gameObject.name);
-
-		Debug.Log (gameController.getSelectedId ());
-		selected = true; 
+		this.selected = true; 
 		playerScript.prepareToLaunch ();
 	}
 
+	//For shoot script to check if home planet is selected
 	public bool isSelected(){
 		return this.selected;
 	}

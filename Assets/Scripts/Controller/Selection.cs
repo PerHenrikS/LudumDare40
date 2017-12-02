@@ -34,8 +34,9 @@ public class Selection : MonoBehaviour {
 			
 			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
 			if(hit){
-				if(hit.transform.tag == "Selectable")
-					Debug.Log ("select planet");
+				if(hit.transform.tag == "Selectable"){
+					hit.collider.SendMessage ("planetSelected");
+				}
 			}
 		}
 	}

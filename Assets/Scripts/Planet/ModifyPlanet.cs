@@ -12,14 +12,10 @@ public class ModifyPlanet : MonoBehaviour {
 		gameController = GameObject.Find ("GameController").GetComponent<Selection>();
 	}
 
-	/*
-	void OnMouseDown(){
-		selected = true;
-		gameController.setSelectedId (gameObject.name); 
-
-		Debug.Log (gameController.getSelectedId());
+	public void planetSelected(){
+		gameController.setSelectedId (gameObject.name);
+		this.selected = true; 
 	}
-	*/
 
 	public void deselect(){
 		this.selected = false; 
