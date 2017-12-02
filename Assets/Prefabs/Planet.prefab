@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1602829406833736}
   m_IsPrefabParent: 1
+--- !u!1 &1321001183486806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4729465907425230}
+  - component: {fileID: 250830327781911840}
+  - component: {fileID: 58075217385586408}
+  m_Layer: 2
+  m_Name: GravityEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1602829406833736
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,13 +37,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4462892410759788}
   - component: {fileID: 212779275015842106}
-  - component: {fileID: 58192752618322558}
   - component: {fileID: 58844682349794718}
-  - component: {fileID: 250248812334295976}
   - component: {fileID: 114536198952607454}
   m_Layer: 0
   m_Name: Planet
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,27 +53,41 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1602829406833736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.45, y: 2.52, z: 0}
+  m_LocalPosition: {x: -1.37, y: 2.52, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4729465907425230}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58192752618322558
+--- !u!4 &4729465907425230
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1321001183486806}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4462892410759788}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58075217385586408
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1602829406833736}
+  m_GameObject: {fileID: 1321001183486806}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017372703, y: 0.00091705326}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.27635384
+  m_Radius: 0.3
 --- !u!58 &58844682349794718
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -85,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21562009fd0fd48b3870ad1aa02e5696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifiable: 1
 --- !u!212 &212779275015842106
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,12 +156,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!250 &250248812334295976
+--- !u!250 &250830327781911840
 PointEffector2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1602829406833736}
+  m_GameObject: {fileID: 1321001183486806}
   m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:

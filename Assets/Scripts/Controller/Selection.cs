@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Selection : MonoBehaviour {
+	//Have to do object selection with raycasting because of 2 colliders on the planets
 
 	public bool launched = false; 
 
@@ -15,7 +16,6 @@ public class Selection : MonoBehaviour {
 		if(GameObject.Find(selectedId)){
 			GameObject.Find (selectedId).SendMessage ("deselect");
 		}
-
 		this.selectedId = id; 
 	}
 
@@ -26,5 +26,17 @@ public class Selection : MonoBehaviour {
 
 	public void launchCubesat(){
 		this.launched = true; 
+	}
+
+	void Update(){
+		if(Input.GetMouseButton(0)){
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			
+			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
+			if(hit){
+				if(hit.transform.tag == "Selectable")
+					Debug.Log ("select planet");
+			}
+		}
 	}
 }

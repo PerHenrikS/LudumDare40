@@ -401,6 +401,10 @@ Prefab:
       propertyPath: m_Name
       value: Planet2
       objectReference: {fileID: 0}
+    - target: {fileID: 1602829406833736, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}
   m_IsPrefabParent: 0
@@ -448,6 +452,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 50963119929877666, guid: cc8dfd18aecca4b4dbd7a5a86ac35ecb,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8dfd18aecca4b4dbd7a5a86ac35ecb, type: 2}
   m_IsPrefabParent: 0
@@ -460,7 +469,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4462892410759788, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.45
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 4462892410759788, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}
       propertyPath: m_LocalPosition.y
@@ -493,6 +502,15 @@ Prefab:
     - target: {fileID: 1602829406833736, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}
       propertyPath: m_Name
       value: Planet1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602829406833736, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 250248812334295976, guid: f4579ae38858c4d3c8ec1b6435c7f242,
+        type: 2}
+      propertyPath: m_ColliderMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4579ae38858c4d3c8ec1b6435c7f242, type: 2}

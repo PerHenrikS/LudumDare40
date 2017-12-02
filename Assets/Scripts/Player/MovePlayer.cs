@@ -14,7 +14,7 @@ public class MovePlayer : MonoBehaviour {
 
 	//Launch variables
 	private float clickedTime = 0f; 
-	private float launchForce = 1.0f; 
+	private float launchForce = 10.0f; 
 	private bool launchReady = true; 
 	private bool preparing = false; 
 
@@ -31,7 +31,6 @@ public class MovePlayer : MonoBehaviour {
 		selected = homePlanet.isSelected ();
 		if(!selected){
 			launchReady = false; 
-			Debug.Log ("Launch ready set to false");
 		}
 
 		if(selected && !gameController.launched){
@@ -52,7 +51,7 @@ public class MovePlayer : MonoBehaviour {
 				if(Input.GetMouseButtonUp(0) && charging){
 					launchForce = launchForce + Time.time - clickedTime; 
 
-					gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * 250f);
+					gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * 100f);
 					homePlanet.deselect ();
 					launchForce = 1f; 
 					charging = false;
