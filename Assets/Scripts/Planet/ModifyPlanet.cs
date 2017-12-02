@@ -31,7 +31,6 @@ public class ModifyPlanet : MonoBehaviour {
 	}
 
 	public void planetSelected(){
-		Debug.Log ("This thing was called");
 		gameController.setSelectedId (gameObject.name);
 		this.selected = true; 
 	}

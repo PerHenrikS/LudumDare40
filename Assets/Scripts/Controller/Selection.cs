@@ -8,7 +8,7 @@ public class Selection : MonoBehaviour {
 	public bool launched = false; 
 
 	//A class to control selections.
-	private string selectedId = "HomePlanet"; 
+	private string selectedId = ""; 
 
 	//Setter for selectedId
 	public void setSelectedId(string id){
@@ -35,7 +35,6 @@ public class Selection : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
 			if(hit){
 				if(hit.transform.tag == "Selectable"){
-					Debug.Log ("Hit a planet with tag: " + hit.transform.tag + " sending planetSelected");
 					hit.collider.SendMessage ("planetSelected");
 				}
 			}else{

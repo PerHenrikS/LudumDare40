@@ -9,7 +9,7 @@ public class HomePlanet : MonoBehaviour {
 	private Selection gameController; 
 	private MovePlayer playerScript; 
 
-	private bool selected = true;
+	private bool selected = false;
 
 	private Color spriteCol; 
 	private bool selCol = false; 
