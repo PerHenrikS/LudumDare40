@@ -21,10 +21,9 @@ GameObject:
   - component: {fileID: 4262202753439790}
   - component: {fileID: 212683281082275360}
   - component: {fileID: 58777607047864966}
-  - component: {fileID: 114591177559160394}
   m_Layer: 0
   m_Name: TargetPlanet
-  m_TagString: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,17 +102,6 @@ CircleCollider2D:
   m_Offset: {x: 0.00087895396, y: 0}
   serializedVersion: 2
   m_Radius: 0.085936785
---- !u!114 &114591177559160394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1050088712150328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21562009fd0fd48b3870ad1aa02e5696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212683281082275360
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -147,7 +135,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.86764705, g: 0.59331745, b: 0.59331745, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

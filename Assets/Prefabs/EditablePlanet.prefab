@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 58844682349794718}
   - component: {fileID: 114536198952607454}
   m_Layer: 0
-  m_Name: Planet
+  m_Name: EditablePlanet
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21562009fd0fd48b3870ad1aa02e5696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityVisual: {fileID: 1558720417737658, guid: 81feddc7e16794b0eba0bb27a651642d,
+    type: 2}
+  gravitySprite: {fileID: 21300000, guid: 85c880b36dcfb4a39aba1199c3770c51, type: 3}
 --- !u!212 &212779275015842106
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -147,7 +150,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.25, g: 0.25, b: 0.25, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

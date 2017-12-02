@@ -35,6 +35,8 @@ public class MovePlayer : MonoBehaviour {
 		}
 
 		if(selected && !gameController.launched){
+			/*
+			 * Uncomment if we take back the angle thingy
 			if (!charging) {
 				Vector3 targetScreenPos = Camera.main.WorldToScreenPoint (target.position);
 				targetScreenPos.z = 0;
@@ -44,6 +46,7 @@ public class MovePlayer : MonoBehaviour {
 				Vector3 newTargetToMe = Vector3.RotateTowards (targetToMe, targetToMouseDir, 2f, 0f);
 				transform.position = target.position + radius * newTargetToMe.normalized;
 			}
+			*/
 			if(launchReady){
 				if(Input.GetMouseButtonDown(0)){ 
 					clickedTime = Time.time;

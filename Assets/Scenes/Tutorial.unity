@@ -775,6 +775,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 212683281082275360, guid: e7ed5eaf075184b9f9d2c05b5fcf2fe8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.74264705
+      objectReference: {fileID: 0}
+    - target: {fileID: 212683281082275360, guid: e7ed5eaf075184b9f9d2c05b5fcf2fe8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.58447677
+      objectReference: {fileID: 0}
+    - target: {fileID: 212683281082275360, guid: e7ed5eaf075184b9f9d2c05b5fcf2fe8,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.41500863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050088712150328, guid: e7ed5eaf075184b9f9d2c05b5fcf2fe8, type: 2}
+      propertyPath: m_TagString
+      value: TargetPlanet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7ed5eaf075184b9f9d2c05b5fcf2fe8, type: 2}
   m_IsPrefabParent: 0

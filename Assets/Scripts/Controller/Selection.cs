@@ -25,7 +25,7 @@ public class Selection : MonoBehaviour {
 	}
 
 	public void launchCubesat(){
-		this.launched = true; 
+		this.launched = true;
 	}
 
 	void Update(){

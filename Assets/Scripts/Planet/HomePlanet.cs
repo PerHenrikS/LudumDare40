@@ -11,10 +11,28 @@ public class HomePlanet : MonoBehaviour {
 
 	private bool selected = true;
 
+	private Color spriteCol; 
+	private bool selCol = false; 
+
 	void Start(){
 		//Game Controller is an object that should be found in every game scene!!!
 		gameController = GameObject.Find ("GameController").GetComponent<Selection>();
 		playerScript = GameObject.Find ("Cubesat").GetComponent<MovePlayer> ();
+
+		spriteCol = gameObject.GetComponent<SpriteRenderer> ().color;
+	}
+
+	void Update(){
+		if(selected){
+			if(!selCol){
+				Debug.Log ("Changed color");
+				gameObject.GetComponent<SpriteRenderer> ().color = spriteCol + new Color(.2f, .2f, .2f);
+				selCol = true; 
+			}
+		}else{
+			gameObject.GetComponent<SpriteRenderer> ().color = spriteCol; 
+			selCol = false; 
+		}
 	}
 
 	public void planetSelected(){

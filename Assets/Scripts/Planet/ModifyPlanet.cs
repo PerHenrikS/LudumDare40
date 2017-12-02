@@ -12,6 +12,8 @@ public class ModifyPlanet : MonoBehaviour {
 
 	private bool effectShowing = false; 
 
+	private GameObject highlight; 
+
 	public GameObject gravityVisual; 
 	public Sprite gravitySprite; 
 
@@ -31,6 +33,9 @@ public class ModifyPlanet : MonoBehaviour {
 
 	public void deselect(){
 		this.effectShowing = false; 
+		if(highlight){
+			Destroy (highlight);
+		}
 		this.selected = false; 
 	}
 
@@ -38,12 +43,12 @@ public class ModifyPlanet : MonoBehaviour {
 		if(selected){
 			if(!effectShowing){
 				effectShowing = true; 
-				Transform highlight = Instantiate (gravityVisual.transform);
-				highlight.parent = transform; 
+			 	highlight = Instantiate (gravityVisual);
+				highlight.transform.parent = transform; 
 				highlight.GetComponent<SpriteRenderer> ().sprite = gravitySprite;
 				highlight.transform.position = transform.position; 
-				highlight.transform.localScale = new Vector3 (circleSize.radius, circleSize.radius, 1f);
-				highlight.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0.5f);
+				highlight.transform.localScale = new Vector3 (1f, 1f, 1f);
+				highlight.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0.1f);
 			}
 			if(Input.GetAxis("Mouse ScrollWheel") > 0f){
 				gravityEffector.forceMagnitude += .5f; 
