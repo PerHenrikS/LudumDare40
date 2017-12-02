@@ -16,10 +16,14 @@ public class SceneManagement : MonoBehaviour {
 	}
 
 	public void nextScene(){
-		int curr = SceneManager.GetActiveScene ().buildIndex;
-		Debug.Log ("Current scene: "+ curr); 
+		int curr = SceneManager.GetActiveScene ().buildIndex; 
 		int next = curr + 1; 
-		Debug.Log ("Next scene: " + next);
 		SceneManager.LoadScene (next);
+	}
+
+	public void previousScene(){
+		int curr = SceneManager.GetActiveScene ().buildIndex; 
+		int previous = curr - 1; 
+		SceneManager.LoadScene (previous);
 	}
 }
