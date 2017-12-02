@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Selection : MonoBehaviour {
 
+	public bool launched = false; 
+
 	//A class to control selections.
-	private string selectedId = ""; 
+	private string selectedId = "HomePlanet"; 
 
 	//Setter for selectedId
 	public void setSelectedId(string id){
@@ -20,5 +22,9 @@ public class Selection : MonoBehaviour {
 	//Getter for selectedID
 	public string getSelectedId(){
 		return selectedId; 
+	}
+
+	public void launchCubesat(){
+		this.launched = true; 
 	}
 }

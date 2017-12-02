@@ -7,29 +7,29 @@ public class HomePlanet : MonoBehaviour {
 	public float rotationSpeed = 5f; 
 
 	private Selection gameController; 
-	private bool selected = false;
+	private MovePlayer playerScript; 
+
+	private bool selected = true;
 
 	void Start(){
 		//Game Controller is an object that should be found in every game scene!!!
 		gameController = GameObject.Find ("GameController").GetComponent<Selection>();
+		playerScript = GameObject.Find ("Cubesat").GetComponent<MovePlayer> ();
 	}
 
 	void OnMouseDown(){
 		gameController.setSelectedId (gameObject.name);
 
 		Debug.Log (gameController.getSelectedId ());
-		if(selected){
-			Debug.Log ("LAUNCH"); 
-		}
 		selected = true; 
+		playerScript.prepareToLaunch ();
+	}
+
+	public bool isSelected(){
+		return this.selected;
 	}
 
 	public void deselect(){
 		this.selected = false; 
-	}
-
-	void FixedUpdate(){
-		
-		//transform.Rotate (Vector3.forward * Time.deltaTime * rotationSpeed);
 	}
 }
