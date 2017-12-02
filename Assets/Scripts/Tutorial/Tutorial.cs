@@ -31,13 +31,16 @@ public class Tutorial : MonoBehaviour {
 
 	void Update(){
 		if(Input.GetMouseButton(0)){
-			if(tutState == 3){
-				tutState = 4;
+			if(tutState == 4){
+				tutState = 5; 
 			}
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
 			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
 			if(hit){
+				if(hit.transform.name == "HomePlanet" && tutState == 3){
+					tutState = 4; 
+				}
 				if(hit.transform.tag == "Selectable" && tutState == 1){
 					tutState = 2; 
 				}
@@ -79,6 +82,10 @@ public class Tutorial : MonoBehaviour {
 			tut4.SetActive (true);
 			hint.SetActive (true); 
 			arrow.gameObject.SetActive (false); 
+			break; 
+		case 5: 
+			tut4.SetActive (false); 
+			hint.SetActive (false); 
 			break; 
 		}
 	}

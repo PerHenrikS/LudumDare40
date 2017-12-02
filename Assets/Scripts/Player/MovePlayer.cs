@@ -57,7 +57,7 @@ public class MovePlayer : MonoBehaviour {
 	//Check if collided planet is target
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "TargetPlanet"){
-			Debug.Log ("WIN");
+			gameController.SendMessage ("planetReached");
 		}
 	}
 

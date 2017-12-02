@@ -7,6 +7,9 @@ public class Selection : MonoBehaviour {
 
 	public bool launched = false; 
 
+	private bool win = false; 
+
+	public GameObject endScreen; 
 	//A class to control selections.
 	private string selectedId = ""; 
 
@@ -43,5 +46,15 @@ public class Selection : MonoBehaviour {
 				}				
 			}
 		}
+	}
+
+	void planetReached(){
+		this.win = true; 
+		endScreen.SetActive (true);
+		endScreen.transform.GetChild (0).GetComponent<FadeIn> ().SendMessage ("fadeIn");
+	}
+
+	public bool getWin(){
+		return this.win;
 	}
 }
