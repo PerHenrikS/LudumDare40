@@ -8,6 +8,7 @@ on the way to your target.
 
 ## Screenshots
 ![Menu](https://github.com/PerHenrikS/LudumDare40/blob/master/Assets/Screens/EscapeMenuScreen.png)
+![Game](https://github.com/PerHenrikS/LudumDare40/blob/master/Assets/Screens/GameScreen.png)
 
 ## Try it out: 
 https://perhenriks.github.io/LudumDare40/
