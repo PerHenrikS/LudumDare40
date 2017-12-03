@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "LudumBuild.data.unityweb",
+"asmCodeUrl": "LudumBuild.asm.code.unityweb",
+"asmMemoryUrl": "LudumBuild.asm.memory.unityweb",
+"asmFrameworkUrl": "LudumBuild.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
