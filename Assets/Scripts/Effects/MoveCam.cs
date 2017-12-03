@@ -7,7 +7,7 @@ public class MoveCam : MonoBehaviour {
 	//If i want to restrict cam movement all together on some scene
 	public bool moveable = true; 
 
-	public float moveSpeed = .04f; 
+	public float moveSpeed = .5f; 
 	public float zoomSpeed = 1f;
 
 	public GameObject gameController; 

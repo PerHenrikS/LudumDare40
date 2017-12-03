@@ -21,6 +21,8 @@ public class ModifyPlanet : MonoBehaviour {
 	public float maxRadius = .1f;
 	private float gravRadius; 
 
+	private float radiusChangeSpeed = .2f; 
+
 	void Start(){
 		//Game Controller is an object that should be found in every game scene!!!
 		gameController = GameObject.Find ("GameController").GetComponent<Selection>();
@@ -57,16 +59,16 @@ public class ModifyPlanet : MonoBehaviour {
 			}
 			if(Input.GetAxis("Mouse ScrollWheel") > 0f){
 				if(circleSize.radius < maxRadius){
-					circleSize.radius += .1f; 
+					circleSize.radius += radiusChangeSpeed; 
 					
-					highlight.transform.localScale += new Vector3 (.2f, .2f, 0f);
+					highlight.transform.localScale += new Vector3 (2*radiusChangeSpeed, 2*radiusChangeSpeed, 0f);
 				}
 			}
 			else if(Input.GetAxis("Mouse ScrollWheel") < 0f){
 				if(circleSize.radius > minRadius){
-					highlight.transform.localScale += new Vector3 (-.2f, -.2f, 0f);
-					
-					circleSize.radius -= .1f; 
+					circleSize.radius -= radiusChangeSpeed; 
+
+					highlight.transform.localScale += new Vector3 (-2*radiusChangeSpeed, -2*radiusChangeSpeed, 0f);
 				}
 			}
 		}
