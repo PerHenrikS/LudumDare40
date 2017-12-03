@@ -23,13 +23,27 @@ public class ModifyPlanet : MonoBehaviour {
 
 	private float radiusChangeSpeed = .2f; 
 
+	//Selected color 
+	private Color planCol; 
+	private bool selectedCol = false; 
+
 	void Start(){
 		//Game Controller is an object that should be found in every game scene!!!
 		gameController = GameObject.Find ("GameController").GetComponent<Selection>();
 
+		highlight = Instantiate (gravityVisual);
+
 		child = transform.GetChild (0);
 		gravityEffector = child.gameObject.GetComponent<PointEffector2D> ();
 		circleSize = child.gameObject.GetComponent<CircleCollider2D> ();
+
+		highlight.transform.parent = transform; 
+		highlight.GetComponent<SpriteRenderer> ().sprite = gravitySprite;
+		highlight.transform.position = transform.position; 
+		highlight.transform.localScale = new Vector3 (2f*circleSize.radius, 2f*circleSize.radius, 1f);
+		highlight.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0.1f);
+
+		planCol = gameObject.GetComponent<SpriteRenderer> ().color; 
 	}
 
 	public void planetSelected(){
@@ -38,24 +52,17 @@ public class ModifyPlanet : MonoBehaviour {
 	}
 
 	public void deselect(){
-		this.effectShowing = false; 
-		if(highlight){
-			Destroy (highlight);
-		}
 		this.selected = false; 
 	}
 
 	void Update(){
 		if(selected){
 			gravRadius = circleSize.radius; 
-			if(!effectShowing){
-				effectShowing = true; 
-			 	highlight = Instantiate (gravityVisual);
-				highlight.transform.parent = transform; 
-				highlight.GetComponent<SpriteRenderer> ().sprite = gravitySprite;
-				highlight.transform.position = transform.position; 
-				highlight.transform.localScale = new Vector3 (2f*circleSize.radius, 2f*circleSize.radius, 1f);
-				highlight.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0.1f);
+
+			//Effect always showing ? :D
+			if(!selectedCol){
+				gameObject.GetComponent<SpriteRenderer> ().color = planCol + new Color(-.5f, -.5f, -.5f);
+				selectedCol = true; 
 			}
 			if(Input.GetAxis("Mouse ScrollWheel") > 0f){
 				if(circleSize.radius < maxRadius){
@@ -71,6 +78,9 @@ public class ModifyPlanet : MonoBehaviour {
 					highlight.transform.localScale += new Vector3 (-2*radiusChangeSpeed, -2*radiusChangeSpeed, 0f);
 				}
 			}
+		}else{
+			gameObject.GetComponent<SpriteRenderer> ().color = planCol; 
+			selectedCol = false; 
 		}
 	}
 }

@@ -30,29 +30,6 @@ public class MovePlayer : MonoBehaviour {
 		target = GameObject.Find ("HomePlanet").transform; 
 	}
 
-	void Update(){
-		selected = homePlanet.isSelected ();
-		if(!selected){
-			launchReady = false; 
-		}
-
-		if(selected && !gameController.launched){
-			if(launchReady){
-				if(Input.GetMouseButtonDown(0)){ 
-					clickedTime = Time.time;
-					charging = true; 
-				}
-				if(Input.GetMouseButtonUp(0) && charging){
-					gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * launchMultiplier);
-					homePlanet.deselect (); 
-					charging = false;
-					gameController.launchCubesat ();
-					audioSource.Play();
-				}
-			}
-		}
-	}
-
 	public void prepareToLaunch(){
 		StartCoroutine (prepareLaunch ());
 	}
@@ -68,5 +45,10 @@ public class MovePlayer : MonoBehaviour {
 		charging = false; 
 		yield return new WaitForSeconds (prepareTime);
 		launchReady = true; 
+	}
+
+	public void launchPod(){
+		gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * launchMultiplier);
+		homePlanet.deselect ();
 	}
 }

@@ -40,6 +40,9 @@ public class Selection : MonoBehaviour {
 				if(hit.transform.tag == "Selectable"){
 					hit.collider.SendMessage ("planetSelected");
 				}
+				if(hit.transform.name == "HomePlanet"){
+					hit.collider.SendMessage ("launchPod");
+				}
 			}else{
 				if(selectedId != "HomePlanet"){
 					this.setSelectedId ("");

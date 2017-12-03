@@ -48,4 +48,11 @@ public class HomePlanet : MonoBehaviour {
 	public void deselect(){
 		this.selected = false; 
 	}
+
+	public void launchPod(){
+		if(!gameController.launched){
+			playerScript.launchPod ();
+		}
+		gameController.launched = true; 
+	}
 }
