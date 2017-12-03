@@ -20,7 +20,10 @@ public class MovePlayer : MonoBehaviour {
 
 	public float prepareTime = 1f; 
 
+	private AudioSource audioSource; 
+
 	void Start(){
+		audioSource = transform.gameObject.GetComponent<AudioSource> ();
 		gameController = GameObject.Find ("GameController").GetComponent<Selection>();
 		homePlanet = GameObject.Find ("HomePlanet").GetComponent<HomePlanet> ();
 
@@ -44,7 +47,7 @@ public class MovePlayer : MonoBehaviour {
 					homePlanet.deselect (); 
 					charging = false;
 					gameController.launchCubesat ();
-					Debug.Log ("Launched!");
+					audioSource.Play();
 				}
 			}
 		}
