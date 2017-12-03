@@ -2,6 +2,7 @@
 
 ### Submission for LudumDare40 
 My first LudumDare yay !
+Link to submission: https://ldjam.com/events/ludum-dare/40/$58163
 
 ## Game 
 The main goal of the game is to reach the target planet. This is achieved by adjusting the gravity of planets 
