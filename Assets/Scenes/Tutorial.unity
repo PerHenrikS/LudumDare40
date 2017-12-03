@@ -745,7 +745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Click empty space to launch !
+  m_Text: 
 --- !u!222 &1640542500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1067,7 +1067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47173628, y: 0.39924797}
   m_AnchorMax: {x: 0.47173628, y: 0.39924797}
-  m_AnchoredPosition: {x: -3.787973, y: 0.59573233}
+  m_AnchoredPosition: {x: -11.6, y: 0.59573233}
   m_SizeDelta: {x: 99.972275, y: 29.999641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2137464992
@@ -1102,7 +1102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Select home planet
+  m_Text: Click home planet to launch !!!
 --- !u!222 &2137464993
 CanvasRenderer:
   m_ObjectHideFlags: 0

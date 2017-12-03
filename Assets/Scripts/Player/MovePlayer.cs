@@ -49,6 +49,7 @@ public class MovePlayer : MonoBehaviour {
 
 	public void launchPod(){
 		gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * launchMultiplier);
+		audioSource.Play ();
 		homePlanet.deselect ();
 	}
 }

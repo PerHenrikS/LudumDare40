@@ -21,10 +21,14 @@ public class MoveCam : MonoBehaviour {
 	void Update () {
 		if(selector.getSelectedId() == ""){
 			if(Input.GetAxis("Mouse ScrollWheel") < 0f){
-				Camera.main.orthographicSize += zoomSpeed; 
+				Debug.Log ("Zoom In");
+				if(Camera.main.orthographicSize >= 2f)
+					Camera.main.orthographicSize -= zoomSpeed; 
 			}
 			if(Input.GetAxis("Mouse ScrollWheel") > 0f){
-				Camera.main.orthographicSize -= zoomSpeed; 
+				Debug.Log ("Zoom Out"); 
+				if(Camera.main.orthographicSize <= 20f)
+					Camera.main.orthographicSize += zoomSpeed; 
 			}
 		}
 		if(moveable){
