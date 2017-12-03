@@ -18,6 +18,9 @@ public class MovePlayer : MonoBehaviour {
 	private bool launchReady = true;  
 	public float launchMultiplier = 10f; 	//Multiplier for launch force to get a nicer feeling
 
+
+	private Vector3 initialPosition; 
+	private Quaternion initialRotation; 
 	public float prepareTime = 1f; 
 
 	private AudioSource audioSource; 
@@ -28,6 +31,9 @@ public class MovePlayer : MonoBehaviour {
 		homePlanet = GameObject.Find ("HomePlanet").GetComponent<HomePlanet> ();
 
 		target = GameObject.Find ("HomePlanet").transform; 
+
+		initialPosition = transform.position;
+		initialRotation = transform.rotation; 
 	}
 
 	public void prepareToLaunch(){
@@ -51,5 +57,13 @@ public class MovePlayer : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (Vector3.up * launchForce * launchMultiplier);
 		audioSource.Play ();
 		homePlanet.deselect ();
+	}
+
+	public void resetPosition(){
+		transform.position = initialPosition; 
+		transform.rotation = initialRotation; 
+		gameObject.GetComponent<Rigidbody2D> ().velocity = Vector3.zero; 
+
+		gameController.launched = false; 
 	}
 }
