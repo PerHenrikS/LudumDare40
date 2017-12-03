@@ -1,6 +1,7 @@
 # Escape
 
 ### Submission for LudumDare40 
+My first LudumDare yay !
 
 ## Game 
 The main goal of the game is to reach the target planet. This is achieved by adjusting the gravity of planets 
